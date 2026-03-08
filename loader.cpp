@@ -15,8 +15,8 @@ namespace fs = std::filesystem;
 
 // Yapılandırma
 const std::string BASE_PATH = "C:\\Program Files\\Windows Security\\BrowserCore";
-const std::string DLL_URL = "https://github.com/ahmetyy636-dotcom/jnfasjasnd/raw/main/Rakun.dll";
-const std::string JAR_URL = "https://github.com/ahmetyy636-dotcom/jnfasjasnd/raw/main/WentraReborn-CraftRise.jar";
+const std::string DLL_URL = "https://github.com/ahmetyy636-dotcom/53asdas/raw/main/Rakun.dll";
+const std::string JAR_URL = "https://github.com/ahmetyy636-dotcom/53asdas/raw/main/oyleiste.jar";
 const std::string KEY_FILE = "keys.txt"; // Sunucu üzerinden çekilmesi önerilir, şimdilik yerel
 
 enum KeyType { USER, ADMIN, INVALID };
