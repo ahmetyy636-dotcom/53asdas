@@ -160,21 +160,15 @@ int main() {
         Sleep(3000); return 0;
     }
 
-    if (info.type == USER) {
-        setRed(); std::cout << "\n    [!] Maintenance Mode: Only developers can access right now." << std::endl;
-        setGrey(); std::cout << "    [?] There is an issue with user keys, please try again later." << std::endl;
-        Sleep(5000); return 0;
-    }
-
-    // Admin devam eder...
-    setGreen(); std::cout << "\n    [+] Welcome Admin! Expiry: " << info.expiry << std::endl;
+    // Herhangi bir geçerli key (USER veya ADMIN) artık girebilir
+    setGreen(); std::cout << "\n    [+] Welcome! Type: " << (info.type == ADMIN ? "ADMIN" : "USER") << " | Expiry: " << info.expiry << std::endl;
     
     // Eski dosyaları temizle ve yenilerini indir
     setPurple(); std::cout << "\n    [!] Loading..." << std::endl;
     fs::remove(BASE_PATH + "\\Rakun.dll");
-    fs::remove(BASE_PATH + "\\WentraReborn-CraftRise.jar");
+    fs::remove(BASE_PATH + "\\oyleiste.jar");
 
-    if (DownloadFile(DLL_URL, BASE_PATH + "\\Rakun.dll") && DownloadFile(JAR_URL, BASE_PATH + "\\WentraReborn-CraftRise.jar")) {
+    if (DownloadFile(DLL_URL, BASE_PATH + "\\Rakun.dll") && DownloadFile(JAR_URL, BASE_PATH + "\\oyleiste.jar")) {
         setGreen(); std::cout << "    [+] Files updated successfully." << std::endl;
     } else {
         setRed(); std::cout << "    [-] Update failed!." << std::endl;
